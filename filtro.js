@@ -1,11 +1,11 @@
 // Tenemos un li de productos
 
-const productos = [
-  { nombre: "Zapato negro", tipo: "zapato", color: "negro", img: "./taco-negro.jpg" },
-  { nombre: "Zapato azul", tipo: "zapato", color: "azul", img: "./taco-azul.jpg" },
-  { nombre: "Bota negra", tipo: "bota", color: "negro", img: "./bota-negra.jpg" },
-  { nombre: "Bota azul", tipo: "bota", color: "azul", img: "./bota-azul.jpg" },
-  { nombre: "Zapato rojo", tipo: "zapato", color: "rojo", img: "./zapato-rojo.jpg" }
+const products = [
+  { nombre: "Zapato negro", tipo: "zapato", color: "negro", img: "./imagenes/taco-negro.jpg" },
+  { nombre: "Zapato azul", tipo: "zapato", color: "azul", img: "./imagenes/taco-azul.jpg" },
+  { nombre: "Bota negra", tipo: "bota", color: "negro", img: "./imagenes/bota-negra.jpg" },
+  { nombre: "Bota azul", tipo: "bota", color: "azul", img: "./imagenes/bota-azul.jpg" },
+  { nombre: "Zapato rojo", tipo: "zapato", color: "rojo", img: "./imagenes/zapato-rojo.jpg" }
 ];
 
 // Seleccionamos correctamente el contenedor de productos
@@ -54,10 +54,4 @@ const filtrado = (productos = [], texto) => {
   return productos.filter(item => item.tipo.toLowerCase().includes(texto) || item.color.toLowerCase().includes(texto));
 }
 
-const products = [
-  { nombre: "Zapato negro", tipo: "zapato", color: "negro", img: "./imagenes/taco-negro.jpg" },
-  { nombre: "Zapato azul", tipo: "zapato", color: "azul", img: "./imagenes/taco-azul.jpg" },
-  { nombre: "Bota negra", tipo: "bota", color: "negro", img: "./imagenes/bota-negra.jpg" },
-  { nombre: "Bota azul", tipo: "bota", color: "azul", img: "./imagenes/bota-azul.jpg" },
-  { nombre: "Zapato rojo", tipo: "zapato", color: "rojo", img: "./imagenes/zapato-rojo.jpg" }
-];
+
