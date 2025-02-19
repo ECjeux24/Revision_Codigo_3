@@ -1,63 +1,63 @@
 // Tenemos un li de productos
 
 const productos = [
-  {nombre: "Zapato negro", tipo: "zapato", color: "negro", img: "./taco-negro.jpg"},
-  {nombre: "Zapato azul", tipo: "zapato", color: "azul", img: "./taco-azul.jpg"},
-  {nombre: "Bota negra", tipo: "bota", color: "negro", img: "./bota-negra.jpg"},
-  {nombre: "Bota azul", tipo: "bota", color: "azul", img: "./bota-azul.jpg"},
-  {nombre: "Zapato rojo", tipo: "zapato", color: "rojo", img: "./zapato-rojo.jpg"}
-]
+  { nombre: "Zapato negro", tipo: "zapato", color: "negro", img: "./taco-negro.jpg" },
+  { nombre: "Zapato azul", tipo: "zapato", color: "azul", img: "./taco-azul.jpg" },
+  { nombre: "Bota negra", tipo: "bota", color: "negro", img: "./bota-negra.jpg" },
+  { nombre: "Bota azul", tipo: "bota", color: "azul", img: "./bota-azul.jpg" },
+  { nombre: "Zapato rojo", tipo: "zapato", color: "rojo", img: "./zapato-rojo.jpg" }
+];
 
-const li = document.getElementsByName("lista-de-productos")
-const $i = document.querySelector('.input');
+// Seleccionamos correctamente el contenedor de productos
+const listaDeProductos = document.getElementById("lista-de-productos");
 
-for (let i = 0; i < productos.length; i++) {
-  var d = document.createElement("div")
-  d.classList.add("producto")
+// Seleccionamos el campo de entrada correctamente
+const inputBusqueda = document.querySelector('#busqueda');
 
-  var ti = document.createElement("p")
-  ti.classList.add("titulo")
-  ti.textContent = productos[i].nombre
+// Función para mostrar los productos
+const mostrarProductos = (productos) => {
+  // Limpiar la lista de productos antes de mostrar los nuevos
+  listaDeProductos.innerHTML = '';
   
-  var imagen = document.createElement("img");
-  imagen.setAttribute('src', productos[i].img);
+  productos.forEach(producto => {
+    const d = document.createElement("div");
+    d.classList.add("producto");
 
-  d.appendChild(ti)
-  d.appendChild(imagen)
+    const ti = document.createElement("p");
+    ti.classList.add("titulo");
+    ti.textContent = producto.nombre;
 
-  li.appendChild(d)
-}
+    const imagen = document.createElement("img");
+    imagen.setAttribute('src', producto.img);
 
-displayProductos(productos)
+    d.appendChild(ti);
+    d.appendChild(imagen);
+
+    listaDeProductos.appendChild(d);
+  });
+};
+
+// Mostrar los productos al cargar la página
+mostrarProductos(productos);
+
+// Seleccionamos el botón de filtro
 const botonDeFiltro = document.querySelector("button");
 
-botonDeFiltro.onclick = function() {
-  while (li.firstChild) {
-    li.removeChild(li.firstChild);
-  }
-
-  const texto = $i.value;
-  console.log(texto);
-  const productosFiltrados = filtrado(productos, texto );
-
-  for (let i = 0; i < productosFiltrados.length; i++) {
-    var d = document.createElement("div")
-    d.classList.add("producto")
-  
-    var ti = document.createElement("p")
-    ti.classList.add("titulo")
-    ti.textContent = productosFiltrados[i].nombre
-    
-    var imagen = document.createElement("img");
-    imagen.setAttribute('src', productosFiltrados[i].img);
-  
-    d.appendChild(ti)
-    d.appendChild(imagen)
-  
-    li.appendChild(d)
-  }
+botonDeFiltro.onclick = function () {
+  const texto = inputBusqueda.value.trim().toLowerCase();
+  const productosFiltrados = filtrado(productos, texto);
+  mostrarProductos(productosFiltrados);
 }
 
+// Función para filtrar productos
 const filtrado = (productos = [], texto) => {
-  return productos.filter(item => item.tipo.includes(texto) || item.color.includes(texto));
-}  
+  return productos.filter(item => item.tipo.toLowerCase().includes(texto) || item.color.toLowerCase().includes(texto));
+}
+
+const products = [
+  { nombre: "Zapato negro", tipo: "zapato", color: "negro", img: "./imagenes/taco-negro.jpg" },
+  { nombre: "Zapato azul", tipo: "zapato", color: "azul", img: "./imagenes/taco-azul.jpg" },
+  { nombre: "Bota negra", tipo: "bota", color: "negro", img: "./imagenes/bota-negra.jpg" },
+  { nombre: "Bota azul", tipo: "bota", color: "azul", img: "./imagenes/bota-azul.jpg" },
+  { nombre: "Zapato rojo", tipo: "zapato", color: "rojo", img: "./imagenes/zapato-rojo.jpg" }
+];

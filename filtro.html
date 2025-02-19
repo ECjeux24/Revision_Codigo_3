@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es"> <!-- Cambié el "en" a "es" si la página está en español -->
 
 <head>
   <meta charset="UTF-8">
@@ -12,13 +12,15 @@
 <body>
 
   <div>
-      <input type="text" placeholder="Seleccioná un color o tipo">
-      <button>Filtrar</button>
-      <h1>Lista de productos </h1>
+      <input type="text" id="busqueda" placeholder="Seleccioná un color o tipo">
+      <button id="filtrar">Filtrar</button>
+      <h1>Lista de productos</h1>
       <div id="lista-de-productos">
-    </div>
+        <!-- Los productos se agregarán aquí desde JS -->
+      </div>
   </div>
-  <script src="../filtro.js"></script>
+
+  <script src="filtro.js"></script>
 </body>
 
 </html>

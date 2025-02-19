@@ -1,24 +1,57 @@
+/* Estilos para el input */
 input {
-  width: 500px;
+  width: 100%; /* Asegura que ocupe el 100% del contenedor */
+  max-width: 500px; /* Establece un máximo de 500px */
   height: 40px;
   font-size: 18px;
+  padding: 0 10px; /* Espaciado interno */
+  box-sizing: border-box; /* Asegura que el padding no afecte el tamaño del input */
+  margin-bottom: 20px; /* Espacio debajo del input */
 }
 
+/* Estilos para la lista de productos */
 #lista-de-productos {
-  display: flex
+  display: flex;
+  flex-wrap: wrap; /* Permite que los productos se acomoden en nuevas filas si no hay espacio */
+  justify-content: center; /* Centra los productos en la página */
 }
 
+/* Estilos para cada producto */
 .producto {
   width: 200px;
-  height: 200px;
+  height: 250px; /* Aumenté un poco la altura para darle más espacio a las imágenes */
   margin: 10px;
   border: 2px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #f9f9f9; /* Color de fondo suave para los productos */
+  border-radius: 8px; /* Bordes redondeados */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efectos de transición */
 }
 
+/* Efecto al pasar el ratón sobre un producto */
+.producto:hover {
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Agrega sombra para resaltar el producto */
+}
+
+/* Estilos para la imagen del producto */
 .producto img {
-  width: 70%;
-  height: auto
+  width: 100%; /* Ocupa todo el ancho disponible */
+  height: auto; /* Mantiene la proporción de la imagen */
+  max-height: 120px; /* Limita la altura máxima de la imagen */
+  object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+  border-radius: 8px; /* Bordes redondeados en las imágenes */
+}
+
+/* Estilo para el título del producto */
+.producto .titulo {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px; /* Espacio superior entre la imagen y el título */
+  text-align: center; /* Centra el texto */
+  color: #333; /* Color oscuro para el texto */
 }
